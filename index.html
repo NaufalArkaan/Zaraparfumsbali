@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bio Link</title>
+    <title>ZARA Bio Link</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
@@ -31,6 +32,8 @@
             background: rgba(255, 255, 255, .14);
             backdrop-filter: blur(3px);
             margin: 10px auto;
+
+            animation: fadeIn 1s ease-out;
         }
 
         .card {
@@ -49,12 +52,13 @@
             border-radius: 50%;
             margin-top: -120px;
             background: #fff;
+
+            animation: float 3.5s ease-in-out infinite;
         }
 
         .title {
             font-family: "Coiny", cursive;
             font-size: 28px;
-            font-weight: 900;
             color: #ee73b2;
             margin: 10px 0 2px;
         }
@@ -70,6 +74,12 @@
             margin-top: 6px;
         }
 
+        .hint::after {
+            content: " ⤵";
+            display: inline-block;
+            animation: wiggle 1.2s infinite;
+        }
+
         .btn {
             display: block;
             width: 100%;
@@ -80,10 +90,10 @@
             font-weight: 600;
             text-align: center;
             border-radius: 32px;
-
             background: linear-gradient(#ff6fa9, #ff8cc0);
 
             transition: all .18s ease;
+            animation: pulse 2.5s infinite;
         }
 
         .btn:hover {
@@ -98,6 +108,68 @@
             box-shadow: none;
         }
 
+        /* Animations */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 105, 150, .6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 105, 150, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 105, 150, 0);
+            }
+        }
+
+        @keyframes wiggle {
+            0% {
+                transform: rotate(0);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(3deg);
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
         @media (max-width: 420px) {
             .logo {
                 margin-top: -105px;
@@ -110,10 +182,10 @@
 
     <div class="wrapper">
         <div class="card">
-            <img class="logo" src="./assets/Logo.jpeg" alt="Brand Logo" />
+            <img class="logo" src="./assets/Logo2.jpeg" alt="Brand Logo" />
             <div class="title">ZARA</div>
             <div class="subtitle">Extrait de Parfum</div>
-            <div class="hint">Order click link ⤵</div>
+            <div class="hint">Order click link</div>
         </div>
 
         <a class="btn" href="https://wa.me/6285737416686" target="_blank">WhatsApp</a>
