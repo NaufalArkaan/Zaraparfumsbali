@@ -13,7 +13,11 @@
         body {
             margin: 0;
             font-family: "Roboto", Arial, Helvetica, sans-serif;
-            background: #ff7fb1 url("./assets/Background.jpeg") no-repeat center center fixed;
+
+            background-color: #ff7fb1;
+            background-image: url("./assets/Background.jpeg");
+            background-repeat: no-repeat;
+            background-position: center top;
             background-size: cover;
 
             display: flex;
@@ -175,6 +179,15 @@
                 margin-top: -105px;
             }
         }
+
+        /*Laptop*/
+        @media (min-width: 900px) {
+            body {
+                background-repeat: repeat;
+                background-size: 420px auto;
+                background-position: center top;
+            }
+        }
     </style>
 </head>
 
@@ -190,6 +203,7 @@
 
         <a class="btn" href="https://wa.me/6285737416686" target="_blank">WhatsApp</a>
         <a class="btn" href="https://shopee.co.id/zabrina.elfaretta" target="_blank">Shopee</a>
+        <a class="btn" href="shop/catalog.html">Our Perfumes</a>
     </div>
 
 </body>
